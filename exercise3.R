@@ -1,0 +1,17 @@
+setwd("C:/Users/John/Desktop/RBook")
+Temp <- read.table("Temperature.txt",header = TRUE)
+head(Temp)
+tail(Temp)
+names((Temp))
+str(Temp)
+T1 <- mean(Temp$Temperature,na.rm = TRUE)
+T1
+unique(Temp$Month)
+MonthlyAvg <- tapply(Temp$Temperature,Temp$Month,mean,na.rm=TRUE)
+MonthlyAvg
+dim(MonthlyAvg)
+table(Temp$Station)
+table(Temp$Month)
+table(Temp$Station,Temp$Month)
+table(Temp$Year)
+table(Temp$Station,Temp$Year)
