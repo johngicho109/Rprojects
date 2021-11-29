@@ -61,6 +61,11 @@ qplot(x3,binwidth=1,ylab = "Count")
 replicate(10,roll())
 rolls <- replicate(10000,roll())
 qplot(rolls,binwidth=1)
-
+roll2 <- function(bones=1:6){
+  dice <- sample(bones,2,replace = TRUE,prob = c(0.125,0.125,0.125,0.125,0.125,0.375))
+  sum(dice)
+} 
+rolls2 <-replicate(10000,roll2())
+qplot(rolls2,binwidth=1)
 
 
